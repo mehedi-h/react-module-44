@@ -13,15 +13,16 @@ const Navbar = () => {
         { id: 5, path: "/contact", name: "Contact Us" }
     ];
     return (
-        <nav className="md:my-5">
-            <div className='md:hidden' onClick={() => setOpen(!open)}>
+        <nav className="md:my-5 p-5">
+            <div className='md:hidden py-2' onClick={() => setOpen(!open)}>
                 {
                     open === !true ? <TfiMenuAlt className='text-xl'></TfiMenuAlt> : <SlClose className='text-xl'></SlClose>
                 }
             </div>
-            <ul className="md:flex md:justify-center md:items-center bg-emerald-200">
+            <ul className={`duration-2000 md:flex md:justify-center md:items-center p-3
+              bg-green-100 rounded-md ${open ? '' : 'hidden'} absolute`}>
                 {
-                    routes.map(route => <li key={route.id} className="text-sm font-medium md:text-base md:font-semibold md:mr-8">
+                    routes.map(route => <li key={route.id} className="py-1 text-sm font-medium md:text-base md:font-semibold md:mr-8">
                         <a href={route.path}>{route.name}</a>
                     </li>)
                 }
