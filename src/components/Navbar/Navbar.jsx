@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { TfiMenuAlt } from 'react-icons/tfi';
+import { SlClose } from 'react-icons/sl';
 
 const Navbar = () => {
     const [open, setOpen] = useState(false)
@@ -13,10 +14,12 @@ const Navbar = () => {
     ];
     return (
         <nav className="md:my-5">
-            <div onClick={() = setOpen(true)}>
-                <TfiMenuAlt className='text-xl md:hidden'></TfiMenuAlt>
+            <div className='md:hidden' onClick={() => setOpen(!open)}>
+                {
+                    open === !true ? <TfiMenuAlt className='text-xl'></TfiMenuAlt> : <SlClose className='text-xl'></SlClose>
+                }
             </div>
-            <ul className="md:flex md:justify-center md:items-center">
+            <ul className="md:flex md:justify-center md:items-center bg-emerald-200">
                 {
                     routes.map(route => <li key={route.id} className="text-sm font-medium md:text-base md:font-semibold md:mr-8">
                         <a href={route.path}>{route.name}</a>
