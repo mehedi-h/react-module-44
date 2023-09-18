@@ -1,4 +1,4 @@
-import { LineChart as Lchart, Line } from 'recharts';
+import { LineChart as Lchart, Line, XAxis, YAxis } from 'recharts';
 
 const LineChart = () => {
 
@@ -76,8 +76,10 @@ const LineChart = () => {
         ]      
 
     return (
-        <div>
-            <Lchart width={600} height={400} data={mathMarksNum}>
+        <div className='flex flex-col items-center py-10'>
+            <Lchart width={700} height={300} data={mathMarksNum}>
+                <XAxis dataKey='id'></XAxis>
+                <YAxis></YAxis>
                 <Line dataKey='mathMarks' stroke='red'></Line>
                 <Line dataKey='physicsMarks' stroke='blue'></Line>
                 <Line dataKey='chemistryMarks' stroke='green'></Line>
