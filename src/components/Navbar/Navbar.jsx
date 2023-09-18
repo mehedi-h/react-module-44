@@ -9,12 +9,14 @@ const Navbar = () => {
         { id: 5, path: "/contact", name: "Contact Us" }
     ];
     return (
-        <nav>
-            {
-                routes.map(route => <li key={route.id}>
-                    <a href={route.path}>{route.name}</a>
-                </li>)
-            }
+        <nav className="md:my-5">
+            <ul className="md:flex md:justify-center md:items-center">
+                {
+                    routes.map(route => <li key={route.id} className="text-sm font-medium md:text-base md:font-semibold md:mr-8">
+                        <a href={route.path}>{route.name}</a>
+                    </li>)
+                }
+            </ul>
         </nav>
     );
 };
